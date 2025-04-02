@@ -1,0 +1,107 @@
+
+package main;
+
+import java.util.Scanner;
+
+
+public class Main {
+
+    
+    public static void main(String[] args) {
+        
+      Scanner grava = new Scanner(System.in);
+      int menu = 0, op, cont = 0; 
+      long tel = 0;
+      String nome = "", email = "", end= "";
+      
+      
+      
+    while(menu != 5){
+        System.out.println("MENU\n1-Cadastrar\n2-Alterar\n3-Consultar\n4-Excluir\n5-Sair");
+        System.out.print("Digite uma opção: ");
+        menu = grava.nextInt();
+      
+        if(menu == 1){
+           if (nome.isEmpty()){
+                System.out.print("Digite seu nome: ");
+                nome = grava.next();
+         
+                System.out.print("Digite seu email: ");
+                email = grava.next();
+         
+                System.out.print("Digite seu telefone: ");
+                tel = grava.nextInt();
+         
+                System.out.print("Digite seu endereço: ");
+                end = grava.next();
+                
+                System.out.println("Cadastro concluído");
+                
+           }else{
+              System.out.print("Não há espaço no Banco de Dados");
+           }
+           
+        System.out.println("\n");
+            
+         
+      }else if(menu ==2){
+            System.out.print("Qual alteração gostaria de fazer: \n1-Nome\n2-Email\n3-Telefone\n4-Endereço");
+            System.out.print("Digite uma opção: ");
+            op = grava.nextInt();
+           
+            if(op == 1){
+                System.out.print("Digite seu nome: ");
+                nome = grava.next();
+                System.out.println("Registro alterado com sucesso");
+            
+            }else if(op ==2){
+                System.out.print("Digite seu email: ");
+                email = grava.next();
+                System.out.println("Registro alterado com sucesso");
+                
+            }else if(op == 3){
+                System.out.print("Digite seu telefone: ");
+                tel = grava.nextInt();
+                System.out.println("Registro alterado com sucesso");
+             
+            }else if(op == 4){
+                System.out.print("Digite seu endereço: ");
+                end = grava.next();
+                System.out.println("Registro alterado com sucesso");
+                
+            }else{
+                  System.out.println("Opção inválida");
+            }
+            
+        System.out.println("\n");
+        
+        }
+      else if(menu == 3){
+          System.out.println("Informaçãoes do registro");
+          System.out.println("seu nome é " + nome);
+          System.out.println("seu email é " + email);
+          System.out.println("seu telefone é " + tel);
+          System.out.println("seu endereço é " + end);
+          
+        System.out.println("\n");
+        
+        }else if(menu == 4){
+          System.out.println("Excluindo o cadastro");
+          nome = null;
+          email = null;
+          tel = 0;
+          end = null;
+          
+          System.out.println("\n");
+          
+        }else if (menu == 5){
+          System.out.println("Saindo do sistema");
+          
+          System.out.println("\n");
+          
+        }else{
+          System.out.println("Opção Inválida");
+        }
+    }
+  }
+}
